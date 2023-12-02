@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AREEBALI JAVASCRIPT</title>
+</head>
+
+<body>
+    <!-- t0tal subject 5 diye -->
+    <!-- yahan per loop chalaya increment kar diya-->
+    <script>
+
+        let totalSubjects = 5;
+        let totalMarks = 0;
+
+        for (let i = 1; i <= totalSubjects; i++) {
+            let subjectMarks = parseFloat(prompt(`Enter marks for Subject ${i}:`));
+
+
+            if (isNaN(subjectMarks)) {
+                alert("Please enter valid marks.");
+                break;
+            }
+
+            totalMarks += subjectMarks;
+        }   
+         
+        let percentage = (totalMarks / (totalSubjects * 100)) * 100;
+        let grade;
+        if (percentage >= 92) {
+            grade = 'A';
+        } else if (percentage >= 87) {
+            grade = 'B';
+        } else if (percentage >= 76) {
+            grade = 'C';
+        } else if (percentage >= 66) {
+            grade = 'D';
+        } else {
+            grade = 'F';
+        }
+
+
+        let resultMessage = `Total Marks: ${totalMarks}\nPercentage: ${percentage.toFixed(2)}%\nGrade: ${grade}`;
+        alert(resultMessage);
+    </script>
+    <!--  now final result is you can enter all 5 subject marks, them they calculatwe and given the result of your papers,ALERT MESSAGE-->
+
+</body>
+</html>
